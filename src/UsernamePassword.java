@@ -18,13 +18,15 @@ public class UsernamePassword {
 
 		Scanner sc = new Scanner(System.in);
 
-		int counter = 0;
+		int counter = 0; // Number of attempts
 
 		// program should go in the while loop and then ask for userID and Password
-		while (counter <= 3) {
-			System.out.println("Enter UserID");
+		while (counter <= 2) {
+			counter++; // Counter value change when loop starts again
+
+			System.out.println(counter + " Enter UserID");
 			String userID = sc.next(); // UserID variable from console
-			System.out.println("Enter Password");
+			System.out.println(counter + " Enter Password");
 			String password = sc.next(); // Password variable from console
 
 			// Using Strg.equals(Strng1) method to compare strings (If userID and Password
@@ -37,13 +39,10 @@ public class UsernamePassword {
 			} else {
 				System.out.println("Incorrect User id or password.Try again");
 			}
-			counter++;
-			{
-				System.out.println(counter);
-			}
-
 		}
-		System.out.println("account locked");
+		if (counter == 3) {
+			System.out.println("Account locked");
+		}
 
 	}
 
