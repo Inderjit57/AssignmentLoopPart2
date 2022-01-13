@@ -38,7 +38,7 @@ public class UsingForLoop {
 				}
 
 				// Comparing .equals method with boolean, if UserID and Password are incorrect
-			} else if (userID.equals("pivotAdmin") == false && password.equals("Admin123") == false) {
+			} else if (!userID.equals("pivotAdmin") && !password.equals("Admin123")) {
 				System.out.println("Incorrect User id or password.Try again");
 				attempts++;
 				if (attempts == 4) {
