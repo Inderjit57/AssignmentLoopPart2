@@ -37,8 +37,17 @@ public class UsingWhileLoop {
 				if (userID.equals("pivotAdmin") && password.equals("Admin123")) {
 					break;
 				}
+			
 			} else {
-				System.out.println("Incorrect User id or password.Try again");
+				if (!userID.equals("pivotAdmin") && password.equals("Admin123")) { //Incorrect UserID and Correct Password
+					System.out.println("Incorrect UserID. Tryagain");
+				}
+				else if (userID.equals("pivotAdmin") && !password.equals("Admin123")) { //Correct UserID and Incorrect Password
+					System.out.println("Incorrect Password. Tryagain");
+				}
+				else if (!userID.equals("pivotAdmin") && !password.equals("Admin123")) { //Incorrect UserID and Password
+					System.out.println("Incorrect User id and password.Try again");
+				}
 			}
 		}
 		if (attempt == 4) {
