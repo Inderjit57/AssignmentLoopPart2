@@ -38,13 +38,23 @@ public class UsingForLoop {
 				}
 
 				// Comparing .equals method with boolean, if UserID and Password are incorrect
-			} else if (!userID.equals("pivotAdmin") && !password.equals("Admin123")) {
-				System.out.println("Incorrect User id or password.Try again");
+			} else {
+				if (!userID.equals("pivotAdmin") && !password.equals("Admin123")) { // Incorrect both
+					System.out.println("Incorrect User id or password.Try again");
+				}
+				else if (!userID.equals("pivotAdmin") && password.equals("Admin123")) { //Incorrect UserID and Correct Password
+					System.out.println("Incorrect UserID. Tryagain");
+					
+					}else if (userID.equals("pivotAdmin") && !password.equals("Admin123")) { //Correct UserID and Incorrect Password
+						System.out.println("Incorrect Password. Tryagain");
+					}
+				
 				attempts++;
 				if (attempts == 4) {
 					System.out.println("Account locked");
 				}
 			}
+			
 
 		}
 
